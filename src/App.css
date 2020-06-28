@@ -65,13 +65,17 @@
   float: right;
 }
 
-#countryDetails table {
+table.afgDetails {
   width: 100%;
 }
 
-#countryDetails table td {
+table.afgDetails td {
   width: 50%;
   font-family: 'Ubuntu', sans-serif;
+}
+
+table.historyTable td, table.historyTable th {
+  border: 1px solid black;
 }
 
 @media only screen and (max-width: 786px) {

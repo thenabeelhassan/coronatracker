@@ -2,283 +2,349 @@ import React, { useEffect, useState} from 'react'
 
 export const AfghanHistory = () => {
     
-    let hist = Array.from({cases : 'Waiting ...'})
-    const [info, setinfo] = useState(hist)
+    let data1 = {History : 'Waiting ...'}
+    let data2 = {History : 'Waiting ...'}
+    let data3 = {History : 'Waiting ...'}
+    const [info1, setinfo1] = useState(data1)
+    const [info2, setinfo2] = useState(data2)
+    const [info3, setinfo3] = useState(data3)
 
     useEffect( () => {
 
         async function fetchData() {
 
-            const Data = await fetch('https://disease.sh/v2/historical/Afghanistan')
+            const url = await fetch('https://disease.sh/v2/historical/Afghanistan')
 
-            const DataJSON = await Data.json()
+            const res = await url.json()
 
-            const timeln = DataJSON.timeline.cases
+            const history1 = res.timeline.cases
+            const history2 = res.timeline.deaths
+            const history3 = res.timeline.recovered
 
-            setinfo(timeln)
+            setinfo1(history1)
+            setinfo2(history2)
+            setinfo3(history3)
         }
         fetchData();
 
     })
 
-    // console.log('info :', info)
+    let casesHistory = info1
+    let deathsHistory = info2
+    let recoveredHistory = info3
 
-    let casesHistory = info
-
-    let casesHist1 = []
-    let casesHist2 = []
+    let date = []
+    let cases = []
+    let deaths = []
+    let recovered = []
     
     for (let [key, value] of Object.entries(casesHistory)) {
-        casesHist1.push(`${key}`);
+        date.push(`${key}`);
     }
     for (let [key, value] of Object.entries(casesHistory)) {
-        casesHist2.push(`${value}`);
+        cases.push(`${value}`);
+    }
+    for (let [key, value] of Object.entries(deathsHistory)) {
+        deaths.push(`${value}`);
+    }
+    for (let [key, value] of Object.entries(recoveredHistory)) {
+        recovered.push(`${value}`);
     }
 
 
     return (
         <section>
-            History:
-            <table>
+            <table
+                className='historyTable'
+            >
+                <thead>
+                    <tr>
+                        <th 
+                            colSpan='4'
+                            className='text-center'
+                        >
+                            History
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            DATES
+                        </th>
+                        <th>
+                            CASES
+                        </th>
+                        <th>
+                            DEATHS
+                        </th>
+                        <th>
+                            RECOVERED
+                        </th>
+                    </tr>
+                </thead>
+
                 <tbody>
                     <tr>
                         <td>
-                            { casesHist1[29] }
+                            { date[29] }
                         </td>
                         <td>
-                            { casesHist2[29] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[28] }
+                            { cases[29] }
                         </td>
                         <td>
-                            { casesHist2[28] }
+                            { deaths[29] }
+                        </td>
+                        <td>
+                            { recovered[29] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[27] }
+                            { date[28] }
                         </td>
                         <td>
-                            { casesHist2[27] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[26] }
+                            { cases[28] }
                         </td>
                         <td>
-                            { casesHist2[26] }
+                            { deaths[28] }
+                        </td>
+                        <td>
+                            { recovered[28] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[25] }
+                            { date[27] }
                         </td>
                         <td>
-                            { casesHist2[25] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[24] }
+                            { cases[27] }
                         </td>
                         <td>
-                            { casesHist2[24] }
+                            { deaths[27] }
+                        </td>
+                        <td>
+                            { recovered[27] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[23] }
+                            { date[26] }
                         </td>
                         <td>
-                            { casesHist2[23] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[22] }
+                            { cases[26] }
                         </td>
                         <td>
-                            { casesHist2[22] }
+                            { deaths[26] }
+                        </td>
+                        <td>
+                            { recovered[28] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[21] }
+                            { date[25] }
                         </td>
                         <td>
-                            { casesHist2[21] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[20] }
-                        </td>
-                        <td>
-                            { casesHist2[20] }
+                            { cases[25] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[19] }
+                            { date[24] }
                         </td>
                         <td>
-                            { casesHist2[19] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[18] }
-                        </td>
-                        <td>
-                            { casesHist2[18] }
+                            { cases[24] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[17] }
+                            { date[23] }
                         </td>
                         <td>
-                            { casesHist2[17] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[16] }
-                        </td>
-                        <td>
-                            { casesHist2[16] }
+                            { cases[23] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[15] }
+                            { date[22] }
                         </td>
                         <td>
-                            { casesHist2[15] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[14] }
-                        </td>
-                        <td>
-                            { casesHist2[14] }
+                            { cases[22] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[13] }
+                            { date[21] }
                         </td>
                         <td>
-                            { casesHist2[13] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[12] }
-                        </td>
-                        <td>
-                            { casesHist2[12] }
+                            { cases[21] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[11] }
+                            { date[20] }
                         </td>
                         <td>
-                            { casesHist2[11] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[10] }
-                        </td>
-                        <td>
-                            { casesHist2[10] }
+                            { cases[20] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[9] }
+                            { date[19] }
                         </td>
                         <td>
-                            { casesHist2[9] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[8] }
-                        </td>
-                        <td>
-                            { casesHist2[8] }
+                            { cases[19] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[7] }
+                            { date[18] }
                         </td>
                         <td>
-                            { casesHist2[7] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[6] }
-                        </td>
-                        <td>
-                            { casesHist2[6] }
+                            { cases[18] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[5] }
+                            { date[17] }
                         </td>
                         <td>
-                            { casesHist2[5] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[4] }
-                        </td>
-                        <td>
-                            { casesHist2[4] }
+                            { cases[17] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[3] }
+                            { date[16] }
                         </td>
                         <td>
-                            { casesHist2[3] }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            { casesHist1[2] }
-                        </td>
-                        <td>
-                            { casesHist2[2] }
+                            { cases[16] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[1] }
+                            { date[15] }
                         </td>
                         <td>
-                            { casesHist2[1] }
+                            { cases[15] }
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            { casesHist1[0] }
+                            { date[14] }
                         </td>
                         <td>
-                            { casesHist2[0] }
+                            { cases[14] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[13] }
+                        </td>
+                        <td>
+                            { cases[13] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[12] }
+                        </td>
+                        <td>
+                            { cases[12] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[11] }
+                        </td>
+                        <td>
+                            { cases[11] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[10] }
+                        </td>
+                        <td>
+                            { cases[10] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[9] }
+                        </td>
+                        <td>
+                            { cases[9] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[8] }
+                        </td>
+                        <td>
+                            { cases[8] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[7] }
+                        </td>
+                        <td>
+                            { cases[7] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[6] }
+                        </td>
+                        <td>
+                            { cases[6] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[5] }
+                        </td>
+                        <td>
+                            { cases[5] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[4] }
+                        </td>
+                        <td>
+                            { cases[4] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[3] }
+                        </td>
+                        <td>
+                            { cases[3] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[2] }
+                        </td>
+                        <td>
+                            { cases[2] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[1] }
+                        </td>
+                        <td>
+                            { cases[1] }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            { date[0] }
+                        </td>
+                        <td>
+                            { cases[0] }
                         </td>
                     </tr>
                 </tbody>

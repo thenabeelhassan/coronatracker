@@ -1,6 +1,5 @@
 import React, { useEffect, useState} from 'react'
 
-// import { Afghan } from "../../countryHistory/A/Afghanistan";
 import { AfghanHistory } from '../../countryHistory/A/Afghan'
 
 export const Afghanistan = () => {
@@ -44,7 +43,9 @@ export const Afghanistan = () => {
             <section
                 className='countryInfo col-lg-7 col-sm-12'
             >
-                <table>
+                <table
+                    className='countryDetails'
+                >
                     <tbody>
                         <tr>    
                             <td>
@@ -139,7 +140,9 @@ export const Afghanistan = () => {
                     </tbody>
                 </table>
             </section>
-            <AfghanHistory />
+            <section>
+                <AfghanHistory />
+            </section>
         </section>
     )
 }
