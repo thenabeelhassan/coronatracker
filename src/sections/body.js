@@ -1,17 +1,19 @@
 import React from 'react'
 
-import { StatsBar } from '../components/statsBar'
-import { Info } from '../components/info'
-import { CountryData } from '../components/countryData'
-import { CountryDetails } from '../components/countryDetails'
+import { Status } from '../components/Status'
+import { Info } from '../components/Info'
+import { Overview } from '../components/Overview'
+import { Summary } from '../components/Summary'
+import { History } from "../components/History";
 
 export const Body = () => {
     return (
         <section>
-            <StatsBar />
+            <Status />
             <Info />
-            <CountryData />
-            <CountryDetails />
+            <Overview />
+            <Summary />
+            <History />
         </section>
     )
 }

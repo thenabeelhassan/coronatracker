@@ -1,0 +1,20 @@
+
+#historyBtn {
+    display: none;
+    float: right;
+    margin: 2%;
+}
+
+#afgSummary, #afgHist {
+    display: none;
+}
+
+.historyTable {
+    /* display: none; */
+    margin: 2% 5%;
+}
+
+.historyTable table td, .historyTable table th {
+    border: 1px solid black;
+    text-align: center;
+}

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { TableHead } from './tableHead'
 
-import { Afghanistan } from './countryData/A/Afghanistan'
+import { Afghanistan } from "./countries/A/Afghanistan/Overview";
 import { Albania } from './countryData/A/Albania'
 import { Algeria } from './countryData/A/Algeria'
 import { Andorra } from './countryData/A/Andorra'
@@ -16,14 +16,14 @@ import { Australia } from './countryData/A/Australia'
 import { Austria } from './countryData/A/Austria'
 import { Azerbaijan } from './countryData/A/Azerbaijan'
 
-export const CountryData = () => {
+export const Overview = () => {
     return (
         <section
-            id='countryData'
+            id='overview'
             className='col'
         >
             <table
-                id='dataTable'
+                id='overviewTable'
                 className='col-11'
             >
                 <TableHead />

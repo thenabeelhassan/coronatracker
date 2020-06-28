@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react'
 
-export const StatsBar = () => {
+export const Status = () => {
 
     let globeData = {active: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
     const [Todo, setTodo] = useState({globeData})
@@ -56,12 +56,14 @@ export const StatsBar = () => {
                             id='detailsBtn'
                             rowSpan='2'
                             onClick = { () => {
-                                document.getElementById('info').style.display = 'none'
-                                document.getElementById('countryData').style.display = 'block'
+                                document.getElementById('info').style.display = 'none';
+                                document.getElementById('overview').style.display = 'block'
                                 }
                             }
                         >
-                            Stats
+                            <u>
+                                Full Details
+                            </u>
                         </td>
                     </tr>
                     <tr>

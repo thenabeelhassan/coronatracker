@@ -20,32 +20,40 @@
 }
 
 #info {
-  display: none;
-}
-
-#countryData {
-  display: none;
-  float: left;
-}
-
-#countryDetails {
-  margin-top: 1%;
   display: block;
 }
 
-#dataTable {
+#overview {
+  display: none;
+}
+
+#summary {
+  margin-top: 1%;
+  height: 100%;
+  float: left;
+}
+
+.flag {
+  float: left;
+}
+
+.details {
+  float: right;
+}
+
+#overviewTable {
   border: 1px solid black;
   margin: 1%;
 }
 
-#dataTable th {
+#overviewTable th {
   border: 1px solid black;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Source Code Pro', monospace;
 }
 
-#dataTable td {
+#overviewTable td {
   border: 1px solid black;
 }
 
@@ -57,26 +65,7 @@
   cursor: pointer;
 }
 
-.countryName {
-  float: left;
-}
-
-.countryInfo {
-  float: right;
-}
-
-table.afgDetails {
-  width: 100%;
-}
-
-table.afgDetails td {
-  width: 50%;
-  font-family: 'Ubuntu', sans-serif;
-}
-
-table.historyTable td, table.historyTable th {
-  border: 1px solid black;
-}
+/* detail  */
 
 @media only screen and (max-width: 786px) {
 

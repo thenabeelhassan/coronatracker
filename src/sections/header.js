@@ -8,7 +8,9 @@ export const Header = () => {
             <h1
                 className='text-center'
                 onClick = { () => {
-                    document.getElementById('countryData').style.display = 'none'
+                    document.getElementById('overview').style.display = 'none'
+                    document.getElementById('summary').style.display = 'none'
+                    document.getElementById('history').style.display = 'none'
                     document.getElementById('info').style.display = 'block'
                     }
                 }
