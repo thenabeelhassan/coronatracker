@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react'
 
 export const Afghanistan = () => {
 
-    let Data = {active: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
+    let Data = {country: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
     const [Todo, setTodo] = useState({Data})
 
     useEffect( () => {
@@ -27,7 +27,14 @@ export const Afghanistan = () => {
 
     return (
         <tr>
-            <td>
+            <td
+                className='detailsBtn'
+                onClick = { () => {
+                        document.getElementById('countryDetails').style.display = 'block'
+                        document.getElementById('countryData').style.display = 'none'
+                    }
+                }
+            >
                 {Todo.country}
             </td>
             <td>

@@ -9,8 +9,6 @@ export const StatsBar = () => {
 
 
         async function fetchData() {
-            // const globeData = await fetch('https://corona.lmao.ninja/v2/countries')
-
             const globeData = await fetch('https://corona.lmao.ninja/v2/all')
 
             const globeDataJSON = await globeData.json()
@@ -63,7 +61,7 @@ export const StatsBar = () => {
                                 }
                             }
                         >
-                            More Details
+                            Stats
                         </td>
                     </tr>
                     <tr>

@@ -7,6 +7,11 @@ export const Header = () => {
         >
             <h1
                 className='text-center'
+                onClick = { () => {
+                    document.getElementById('countryData').style.display = 'none'
+                    document.getElementById('info').style.display = 'block'
+                    }
+                }
             >
                 Corona Virus
             </h1>

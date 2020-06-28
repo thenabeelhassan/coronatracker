@@ -22,18 +22,8 @@ export const CountryData = () => {
             id='countryData'
             className='col'
         >
-            <button
-                id='infoBtn'
-                onClick = { () => {
-                    document.getElementById('countryData').style.display = 'none'
-                    document.getElementById('info').style.display = 'block'
-                    }
-                }
-            >
-                home
-            </button>
             <table
-                id='detailsTable'
+                id='dataTable'
                 className='col-11'
             >
                 <TableHead />

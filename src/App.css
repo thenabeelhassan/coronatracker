@@ -1,40 +1,5 @@
 
 
-h1 {
-  font-family: 'Comic Neue', cursive;
-  color: white;
-  text-transform: uppercase;
-  padding: 2%;
-}
-
-h2 {
-  font-family: 'Nanum Gothic Coding', monospace;
-}
-
-h3 {
-  font-family: 'Source Code Pro', monospace;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-.red {
-  color: red;
-}
-
-.green {
-  color: green;
-}
-
-.yellow {
-  color: yellow;
-}
-
 #header {
   height: 15vh;
   background-color: forestgreen;
@@ -59,28 +24,54 @@ h3 {
 }
 
 #countryData {
-  display: block;
+  display: none;
   float: left;
 }
 
-#detailsTable {
+#countryDetails {
+  margin-top: 1%;
+  display: block;
+}
+
+#dataTable {
   border: 1px solid black;
   margin: 1%;
 }
 
-#detailsTable th {
+#dataTable th {
   border: 1px solid black;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Source Code Pro', monospace;
 }
 
-#detailsTable td {
+#dataTable td {
   border: 1px solid black;
 }
 
 #infoBtn {
   float: right;
+}
+
+.detailsBtn {
+  cursor: pointer;
+}
+
+.countryName {
+  float: left;
+}
+
+.countryInfo {
+  float: right;
+}
+
+#countryDetails table {
+  width: 100%;
+}
+
+#countryDetails table td {
+  width: 50%;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 @media only screen and (max-width: 786px) {
