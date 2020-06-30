@@ -1,6 +1,9 @@
 import React from 'react'
 
+// 
 import { Afghanistan } from "./countries/A/Afghanistan/History";
+import { Albania } from "./countries/A/Albania/History";
+
 
 export const History = () => {
     return (
@@ -20,6 +23,7 @@ export const History = () => {
                 </button>
             </section>
             <Afghanistan />
+            <Albania />
         </section>
     )
 }

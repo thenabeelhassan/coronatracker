@@ -10,11 +10,11 @@ export const Afghanistan = () => {
 
         async function fetchData() {
 
-            const Data = await fetch('https://corona.lmao.ninja/v2/countries')
+            const api = await fetch('https://corona.lmao.ninja/v2/countries')
 
-            const DataJSON = await Data.json()
+            const json = await api.json()
 
-            const myData = DataJSON[0]
+            const myData = json[0]
 
             setTodo(myData)
         }
@@ -32,6 +32,8 @@ export const Afghanistan = () => {
                 onClick = { () => {
                         document.getElementById('overview').style.display = 'none'
                         document.getElementById('afgSummary').style.display = 'block'
+                        document.getElementById('summary').style.display = 'block'
+                        document.getElementById('history').style.display = 'block'
                     }
                 }
             >

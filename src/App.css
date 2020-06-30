@@ -5,13 +5,25 @@
   background-color: forestgreen;
 }
 
-#worldStatusBar, #worldStatusBar td {
+#status {
+  width: 100%;
+}
+
+#status th, #status td {
   text-align: center;
   border: 1px solid black;
 }
 
-#detailsBtn {
+#detail {
   cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+  /* float: right; */
+  margin: 1%;
+  padding: 5px;
+  border: 1px solid chartreuse;
+  background-color: chartreuse;
+  border-radius: 10%;
 }
 
 .coronaInfo {
@@ -64,8 +76,6 @@
 .detailsBtn {
   cursor: pointer;
 }
-
-/* detail  */
 
 @media only screen and (max-width: 786px) {
 

@@ -5,7 +5,7 @@
     margin: 2%;
 }
 
-#afgSummary, #afgHist {
+#afgSummary, #afgHist, #albSummary, #albHist {
     display: none;
 }
 

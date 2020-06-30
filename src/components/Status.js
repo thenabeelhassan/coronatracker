@@ -1,19 +1,21 @@
 import React, { useEffect, useState} from 'react'
 
+import { Details } from "../components/Details";
+
 export const Status = () => {
 
-    let globeData = {active: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
-    const [Todo, setTodo] = useState({globeData})
+    let globe = {active: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
+    const [Data, setData] = useState({globe})
 
     useEffect( () => {
 
 
         async function fetchData() {
-            const globeData = await fetch('https://corona.lmao.ninja/v2/all')
+            const api = await fetch('https://corona.lmao.ninja/v2/all')
 
-            const globeDataJSON = await globeData.json()
+            const json = await api.json()
 
-            setTodo(globeDataJSON)
+            setData(json)
         }
 
         fetchData();
@@ -22,69 +24,64 @@ export const Status = () => {
     })
 
     
-    // console.log(Todo)
-
     return (
         <section
-            id='worldStatus'
+            id='bar'
         >
             <table
-                id='worldStatusBar'
-                className='col-12'
-            >
+                id='status'>
+                <thead>
+                    <tr>
+                        <th
+                            colSpan='4'
+                            className='col-12 text-center'
+                        >
+                            <h3>
+                                World Status
+                            </h3>
+                        </th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
-                        <td
-                            rowSpan='2'
-                        >
-                            <span>
-                                <b>
-                                    World Status
-                                </b>
-                            </span>
+                        <td>
+                            Total Cases:
                         </td>
                         <td>
                             Active Cases:
                         </td>
                         <td>
-                            Total Infected:
+                            Recovered:
                         </td>
                         <td>
                             Deaths:
-                        </td>
-                        <td
-                            id='detailsBtn'
-                            rowSpan='2'
-                            onClick = { () => {
-                                document.getElementById('info').style.display = 'none';
-                                document.getElementById('overview').style.display = 'block'
-                                }
-                            }
-                        >
-                            <u>
-                                Full Details
-                            </u>
                         </td>
                     </tr>
                     <tr>
                         <td
                             className='red'
                         >
-                            {Todo.active}
+                            {Data.cases}
                         </td>
                         <td
                             className='red'
                         >
-                            {Todo.cases}
+                            {Data.active}
                         </td>
                         <td
                             className='red'
                         >
-                            {Todo.deaths}
+                            {Data.recovered}
+                        </td>
+                        <td
+                            className='red'
+                        >
+                            {Data.deaths}
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <Details />
         </section>
     )
 }
