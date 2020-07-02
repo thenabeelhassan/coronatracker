@@ -1,22 +1,20 @@
 import React, { useEffect, useState} from 'react'
 
-export const Albania = () => {
+export const Austria = () => {
 
-    let Data = {country: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...', flag: '...'}
-    const [Summary, setSummary] = useState({Data})
+    let Austria = {country: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...', flag: '...'}
+    const [Summary, setSummary] = useState({Austria})
 
     useEffect( () => {
 
 
         async function fetchData() {
 
-            const api = await fetch('https://corona.lmao.ninja/v2/countries')
+            const api = await fetch('https://corona.lmao.ninja/v2/countries/Austria')
 
             const json = await api.json()
 
-            const data = json[1]
-
-            setSummary(data)
+            setSummary(json)
         }
 
         fetchData();
@@ -25,12 +23,12 @@ export const Albania = () => {
 
     return (
         <section
-            id='albSummary'
+            id='autSummary'
         >
             <section
                 className='flag col-lg-6 col-sm-12'
             >
-                <img src='https://disease.sh/assets/img/flags/al.png' alt={Summary.country} />
+                <img src='https://disease.sh/assets/img/flags/ai.png' alt={Summary.country} />
                 <h3
                     className='col'
                 >
@@ -39,7 +37,7 @@ export const Albania = () => {
                 <button
                     className='historyButton'
                     onClick = { () => {
-                        document.getElementById('albHist').style.display = 'block'
+                        document.getElementById('autHist').style.display = 'block'
                         document.getElementById('history').style.display = 'block'
                         document.getElementById('historyBtn').style.display = 'block'
                         }

@@ -8,7 +8,7 @@ import { Algeria } from './countries/A/Algeria/Overview'
 import { Andorra } from './countries/A/Andorra/Overview'
 import { Angola } from './countries/A/Angola/Overview'
 import { Anguilla } from './countries/A/Anguilla/Overview'
-import { AntiguaandBarbuda } from './countries/A/AntiguaandBarbuda/Overview'
+import { AntiguaAndBarbuda } from './countries/A/AntiguaAndBarbuda/Overview'
 import { Argentina } from './countries/A/Argentina/Overview'
 import { Armenia } from './countries/A/Armenia/Overview'
 import { Aruba } from './countries/A/Aruba/Overview'
@@ -34,7 +34,7 @@ export const Overview = () => {
                     <Andorra />
                     <Angola />
                     <Anguilla />
-                    <AntiguaandBarbuda />
+                    <AntiguaAndBarbuda />
                     <Argentina />
                     <Armenia />
                     <Aruba />

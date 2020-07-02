@@ -2,21 +2,19 @@ import React, { useEffect, useState} from 'react'
 
 export const Afghanistan = () => {
 
-    let Data = {country: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
-    const [Todo, setTodo] = useState({Data})
+    let Afghanistan = {country: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
+    const [Overview, setOverview] = useState({Afghanistan})
 
     useEffect( () => {
 
 
         async function fetchData() {
 
-            const api = await fetch('https://corona.lmao.ninja/v2/countries')
+            const url = await fetch('https://corona.lmao.ninja/v2/countries/Afghanistan')
 
-            const json = await api.json()
+            const res = await url.json()
 
-            const myData = json[0]
-
-            setTodo(myData)
+            setOverview(res)
         }
 
         fetchData();
@@ -37,33 +35,33 @@ export const Afghanistan = () => {
                     }
                 }
             >
-                {Todo.country}
+                {Overview.country}
             </td>
             <td>
-                {Todo.cases}
+                {Overview.cases}
             </td>
             <td>
-                {Todo.deaths}
+                {Overview.deaths}
             </td>
             <td
                 className='tabTable'
             >
-                {Todo.recovered}
+                {Overview.recovered}
             </td>
             <td
                 className='fullTable'
             >
-                {Todo.tests}
+                {Overview.tests}
             </td>
             <td
                 className='fullTable'
             >
-                {Todo.active}
+                {Overview.active}
             </td>
             <td
                 className='fullTable'
             >
-                {Todo.critical}
+                {Overview.critical}
             </td>
         </tr>    
     )

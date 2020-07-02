@@ -1,22 +1,20 @@
 import React, { useEffect, useState} from 'react'
 
-export const Albania = () => {
+export const Aruba = () => {
 
-    let Data = {country: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...', flag: '...'}
-    const [Summary, setSummary] = useState({Data})
+    let Aruba = {country: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...', flag: '...'}
+    const [Summary, setSummary] = useState({Aruba})
 
     useEffect( () => {
 
 
         async function fetchData() {
 
-            const api = await fetch('https://corona.lmao.ninja/v2/countries')
+            const url = await fetch('https://corona.lmao.ninja/v2/countries/Aruba')
 
-            const json = await api.json()
+            const res = await url.json()
 
-            const data = json[1]
-
-            setSummary(data)
+            setSummary(res)
         }
 
         fetchData();
@@ -25,29 +23,17 @@ export const Albania = () => {
 
     return (
         <section
-            id='albSummary'
+            id='aruSummary'
         >
             <section
                 className='flag col-lg-6 col-sm-12'
             >
-                <img src='https://disease.sh/assets/img/flags/al.png' alt={Summary.country} />
+                <img src='https://disease.sh/assets/img/flags/aw.png' alt={Summary.country} />
                 <h3
                     className='col'
                 >
                     {Summary.country}
                 </h3>
-                <button
-                    className='historyButton'
-                    onClick = { () => {
-                        document.getElementById('albHist').style.display = 'block'
-                        document.getElementById('history').style.display = 'block'
-                        document.getElementById('historyBtn').style.display = 'block'
-                        }
-                    }
-                >
-                    <i className="fa fa-history"></i>
-                    Last 30 Days
-                </button>
             </section>
 
             <section

@@ -2,21 +2,19 @@ import React, { useEffect, useState} from 'react'
 
 export const Austria = () => {
 
-    let Data = {active: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
-    const [Todo, setTodo] = useState({Data})
+    let Austria = {active: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
+    const [Overview, setOverview] = useState({Austria})
 
     useEffect( () => {
 
 
         async function fetchData() {
 
-            const Data = await fetch('https://corona.lmao.ninja/v2/countries')
+            const api = await fetch('https://corona.lmao.ninja/v2/countries/Austria')
 
-            const DataJSON = await Data.json()
+            const json = await api.json()
 
-            const myData = DataJSON[11]
-
-            setTodo(myData)
+            setOverview(json)
         }
 
         fetchData();
@@ -27,34 +25,43 @@ export const Austria = () => {
 
     return (
         <tr>
-            <td>
-                {Todo.country}
+            <td
+                className='detailsBtn'
+                onClick = { () => {
+                        document.getElementById('overview').style.display = 'none'
+                        document.getElementById('autSummary').style.display = 'block'
+                        document.getElementById('summary').style.display = 'block'
+                        document.getElementById('history').style.display = 'block'
+                    }
+                }
+            >
+                {Overview.country}
             </td>
             <td>
-                {Todo.cases}
+                {Overview.cases}
             </td>
             <td>
-                {Todo.deaths}
+                {Overview.deaths}
             </td>
             <td
                 className='tabTable'
             >
-                {Todo.recovered}
+                {Overview.recovered}
             </td>
             <td
                 className='fullTable'
             >
-                {Todo.tests}
+                {Overview.tests}
             </td>
             <td
                 className='fullTable'
             >
-                {Todo.active}
+                {Overview.active}
             </td>
             <td
                 className='fullTable'
             >
-                {Todo.critical}
+                {Overview.critical}
             </td>
         </tr>    
     )

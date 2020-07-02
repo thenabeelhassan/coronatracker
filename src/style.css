@@ -5,7 +5,15 @@
     margin: 2%;
 }
 
-#afgSummary, #afgHist, #albSummary, #albHist {
+#afgSummary, #afgHist, #albSummary, #albHist, #algSummary, #algHist, #andSummary, #andHist, #angSummary, #angHist {
+    display: none;
+}
+
+#anuSummary, #anuHist, #aabSummary, #aabHist, #argSummary, #argHist, #armSummary, #armHist, #aruSummary, #aruHist {
+    display: none;
+}
+
+#ausSummary, #ausHist, #autSummary, #autHist, #azeSummary, #azeHist {
     display: none;
 }
 

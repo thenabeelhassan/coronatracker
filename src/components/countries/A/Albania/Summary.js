@@ -10,13 +10,11 @@ export const Albania = () => {
 
         async function fetchData() {
 
-            const api = await fetch('https://corona.lmao.ninja/v2/countries')
+            const api = await fetch('https://corona.lmao.ninja/v2/countries/Albania')
 
             const json = await api.json()
 
-            const data = json[1]
-
-            setSummary(data)
+            setSummary(json)
         }
 
         fetchData();

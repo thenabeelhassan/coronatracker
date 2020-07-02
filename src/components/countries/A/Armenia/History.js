@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react'
 
-export const Albania = () => {
+export const Armenia = () => {
     
     let data1 = {History : 'Waiting ...'}
     let data2 = {History : 'Waiting ...'}
@@ -13,7 +13,7 @@ export const Albania = () => {
 
         async function fetchData() {
 
-            const url = await fetch('https://corona.lmao.ninja/v2/historical/Albania')
+            const url = await fetch('https://corona.lmao.ninja/v2/historical/Armenia')
 
             const res = await url.json()
 
@@ -54,7 +54,7 @@ export const Albania = () => {
 
     return (
         <section
-            id='albHist'
+            id='armHist'
         >
             <section
                 className='historyTable'

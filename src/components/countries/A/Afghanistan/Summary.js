@@ -2,27 +2,23 @@ import React, { useEffect, useState} from 'react'
 
 export const Afghanistan = () => {
 
-    let Data = {country: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...', flag: '...'}
-    const [Afghan, setAfghan] = useState({Data})
+    let Afghanistan = {country: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...', flag: '...'}
+    const [Summary, setSummary] = useState({Afghanistan})
 
     useEffect( () => {
 
 
         async function fetchData() {
 
-            const api = await fetch('https://corona.lmao.ninja/v2/countries')
+            const url = await fetch('https://corona.lmao.ninja/v2/countries/Afghanistan')
 
-            const json = await api.json()
+            const res = await url.json()
 
-            const data = json[0]
-
-            setAfghan(data)
+            setSummary(res)
         }
 
         fetchData();
     })
-
-    console.log('Afghan: ', Afghan)
 
     return (
         <section
@@ -31,11 +27,11 @@ export const Afghanistan = () => {
             <section
                 className='flag col-lg-6 col-sm-12'
             >
-                <img src='https://disease.sh/assets/img/flags/af.png' alt={Afghan.country} />
+                <img src='https://disease.sh/assets/img/flags/af.png' alt={Summary.country} />
                 <h3
                     className='col'
                 >
-                    {Afghan.country}
+                    {Summary.country}
                 </h3>
                 <button
                     className='historyButton'
@@ -57,110 +53,110 @@ export const Afghanistan = () => {
                 <ul>
                     <li>
                         <span
-                            className='AfghanLabel'
+                            className='SummaryLabel'
                         >
                             <b> Infected : </b>
                         </span>
                         <span
-                            className='AfghanValue'
+                            className='SummaryValue'
                         >
-                            {Afghan.cases}
+                            {Summary.cases}
                         </span>
                     </li>
                     <li>
                         <span
-                            className='AfghanLabel'
+                            className='SummaryLabel'
                         >
                             <b> Infected Today : </b>
                         </span>
                         <span
-                            className='AfghanValue'
+                            className='SummaryValue'
                         >
-                            {Afghan.todayCases}
+                            {Summary.todayCases}
                         </span>
                     </li>
                     <li>
                         <span
-                            className='AfghanLabel'
+                            className='SummaryLabel'
                         >
                             <b> Deaths : </b>
                         </span>
                         <span
-                            className='AfghanValue'
+                            className='SummaryValue'
                         >
-                            {Afghan.deaths}
+                            {Summary.deaths}
                         </span>
                     </li>
                     <li>
                         <span
-                            className='AfghanLabel'
+                            className='SummaryLabel'
                         >
                             <b> Deaths Today : </b>
                         </span>
                         <span
-                            className='AfghanValue'
+                            className='SummaryValue'
                         >
-                            {Afghan.todayDeaths}
+                            {Summary.todayDeaths}
                         </span>
                     </li>
                     <li>
                         <span
-                            className='AfghanLabel'
+                            className='SummaryLabel'
                         >
                             <b> Recovered : </b>
                         </span>
                         <span
-                            className='AfghanValue'
+                            className='SummaryValue'
                         >
-                            {Afghan.Recovered}
+                            {Summary.Recovered}
                         </span>
                     </li>
                     <li>
                         <span
-                            className='AfghanLabel'
+                            className='SummaryLabel'
                         >
                             <b> Recovered Today : </b>
                         </span>
                         <span
-                            className='AfghanValue'
+                            className='SummaryValue'
                         >
-                            {Afghan.todayRecovered}
+                            {Summary.todayRecovered}
                         </span>
                     </li>
                     <li>
                         <span
-                            className='AfghanLabel'
+                            className='SummaryLabel'
                         >
                             <b> Active : </b>
                         </span>
                         <span
-                            className='AfghanValue'
+                            className='SummaryValue'
                         >
-                            {Afghan.active}
+                            {Summary.active}
                         </span>
                     </li>
                     <li>
                         <span
-                            className='AfghanLabel'
+                            className='SummaryLabel'
                         >
                             <b> Infected Critical : </b>
                         </span>
                         <span
-                            className='AfghanValue'
+                            className='SummaryValue'
                         >
-                            {Afghan.critical}
+                            {Summary.critical}
                         </span>
                     </li>
                     <li>
                         <span
-                            className='AfghanLabel'
+                            className='SummaryLabel'
                         >
                             <b> Tests : </b>
                         </span>
                         <span
-                            className='AfghanValue'
+                            className='SummaryValue'
                         >
-                            {Afghan.tests}
+                            {Summary.tests}
                         </span>
                     </li>
                 </ul>

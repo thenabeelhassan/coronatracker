@@ -2,21 +2,19 @@ import React, { useEffect, useState} from 'react'
 
 export const Angola = () => {
 
-    let Data = {active: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
-    const [Todo, setTodo] = useState({Data})
+    let Angola = {active: 'Waiting ...', cases: 'Waiting ...', deaths: 'Waiting ...'}
+    const [Todo, setTodo] = useState({Angola})
 
     useEffect( () => {
 
 
         async function fetchData() {
 
-            const Data = await fetch('https://corona.lmao.ninja/v2/countries')
+            const api = await fetch('https://corona.lmao.ninja/v2/countries/Angola')
 
-            const DataJSON = await Data.json()
+            const json = await api.json()
 
-            const myData = DataJSON[4]
-
-            setTodo(myData)
+            setTodo(json)
         }
 
         fetchData();
@@ -27,7 +25,16 @@ export const Angola = () => {
 
     return (
         <tr>
-            <td>
+            <td
+                className='detailsBtn'
+                onClick = { () => {
+                        document.getElementById('overview').style.display = 'none'
+                        document.getElementById('angSummary').style.display = 'block'
+                        document.getElementById('summary').style.display = 'block'
+                        document.getElementById('history').style.display = 'block'
+                    }
+                }
+            >
                 {Todo.country}
             </td>
             <td>
